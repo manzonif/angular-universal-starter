@@ -34,7 +34,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prerender": "npm run build:universal && npm run generate:prerender",
-    "generate:prerender": "node prerender.js",
+    "generate:prerender": "node dist-server-express/prerender.js",
     "bundle-report": "ng build --stats-json && webpack-bundle-analyzer dist/stats.json",
     "bundle-report:prod": "ng build --stats-json --prod && webpack-bundle-analyzer dist/stats.json"
   },
