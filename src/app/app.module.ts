@@ -21,6 +21,7 @@ import { ErrorInterceptor } from '@shared/interceptors/error.interceptor';
 import { AuthGuard } from '@shared/guards/auth.guard';
 import { UnAuthGuard } from '@shared/guards/un-auth.guard';
 
+
 export function initLanguage(translateService: TranslatesService): Function {
   return (): Promise<any> => translateService.initLanguage();
 }

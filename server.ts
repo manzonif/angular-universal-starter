@@ -12,7 +12,9 @@ const domino = require('domino');
 const fs = require('fs');
 const path = require('path');
 // index from browser build!
-const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
+// const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
+const template = fs.readFileSync(path.join(__dirname, '..', 'dist', 'index.html')).toString();
+
 // for mock global window by domino
 const win = domino.createWindow(template);
 // from server build
@@ -46,7 +48,8 @@ const mainFiles = files.filter((file) => file.startsWith('main'));
 // with hash
 const hash = mainFiles[0].split('.')[1];
 // main from server impl.
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}`);
+// const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist-server/main.${hash}`);
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`../dist-server/main.${hash}`);
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
 // port
